@@ -1,0 +1,148 @@
+파일명 : style.css
+
+html 파일의 head 부분에 링크를 삽입해야 연결됨.
+<link href='style파일위치.css' rel='stylesheet'>
+
+# 특정 셀렉터에 동일한 스타일 적용
+p {
+}
+
+# 모든 요소에 동일한 스타일 적용
+*{
+}
+
+#특정 클래스에 동일한 스타일 적용
+.class_name{
+}
+
+#css에 입력된 스타일 여러개 동시 적용하기
+.green {
+  color: green;
+}
+.bold {
+  font-weight: bold;
+}
+->> html 에서 클래스명에 " " 공백을 넣으면 두 스타일 요소가 동시에 적용된다..
+<h1 class='green bold'> ... </h1>
+
+# 대문자
+.uppercase {
+  text-transform: uppercase;
+}
+
+#특정 id 요소에만 스타일 적용
+ #id {
+} 
+
+#특정 속성이 포함된 요소에 동일한 스타일 적용
+[href]{
+   color: magenta;
+}
+
+#특정 셀렉터의 속성의 값(value)을 포함하는 요소들에 동일한 스타일 적용 
+img[src*='summer'] {
+  height: 100px;
+}
+
+#Pseudo-class (상호작용하는 클래스)
+:focus, :visited, :disabled, :active, :hover
+
+#ul 클래스의 li 의 스타일 -> 띄어쓰기로 chaining 
+.ul클래스명 li { 
+}
+
+# p 하위의 h1 의 스타일
+p h1 {  
+} 
+
+# 반복되는 스타일은 ","로 같이 쓰기
+h1, .menu {
+  font-family: Georgia;
+}
+
+# 스타일
+text-align : 텍스트 정렬 
+font-family
+font-size
+font-weight
+font-style
+text-transform :uppercase/lowercase 
+letter-spacing #자간 #2px or 0.5em
+word-spacing #단어간격
+line-height #줄간격 #12px, 5% or 2em.
+text-align #정렬 #justify(양쪽)
+
+#구글 폰트 추가하기
+1. https://fonts.googleapis.com 으로 이동
+2. 원하는 폰트 선택
+3. 오른쪽에 생성된 링크 복사
+4. html에 삽입
+<head>
+  <!-- Add the link element for Google Fonts along with other metadata -->
+  <link href="링크" rel="stylesheet">
+</head>
+5. css에서 font-family: 폰트명;
+
+##
+@font-face {
+  font-family: 'MyParagraphFont';
+  src: url('fonts/Roboto.woff2') format('woff2'),
+       url('fonts/Roboto.woff') format('woff'),
+       url('fonts/Roboto.ttf') format('truetype');
+}
+
+
+opacity : 불투명도 (0~1)
+background-image: url('이미지주소.jpg');
+
+
+color : #FFFFFF /rgb(255,255,255)
+background-color
+color: hsl(120, 60%, 70%);  #HSL : 색조, 채도, 밝기 #H: 0~360, S,L: 0~100% 
+color: hsla(34, 100%, 50%, 0.1); #hsl + 불투명도 #a: 0~1
+color: rgba(234, 45, 98, 0.33); #rgb + 불투명도 #a: 0~1
+color: transparent; = rgb(0,0,0,0)
+
+#Resetting Defaults
+* {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+# 박스
+overflow: hidden/scroll/visible  #박스 크기보다 큰 컨텐츠가 들어오면..
+width : px;
+min-width
+max-width
+height : px;
+min-height
+max-height
+padding :px;
+padding: 6px(top) 11px(right) 4px(bottom) 9px(left); #4개를 쓰면 각각 적용됨
+padding: 6px(top) 11px(right,left) 4px(bottom) #3개를 쓰면 가운데는 오른쪽, 왼쪽 동시 적용
+padding: 6px(top, bottom) 11px(right,left) #2개를 쓰면 앞에꺼는 위아래, 뒤에꺼는 좌우 동시 적용
+padding-top
+padding-right
+padding-bottom
+padding-left
+border : width(thin, medium, thick) style(none, dotted, solid) color
+border-radius: px 또는 0~100%
+margin : 0 auto; #수직은 0 간격, 수평은 자동으로
+float: right/left;
+clear: right/left # 옆으로 붙지 않게
+
+#
+visibility :hidden/visible/collapse(축소)
+display: none   
+display: inline; #인라인 요소를 표시함
+display: block
+display: inline-block; #공간이 허용되는 한 한줄로 표시
+
+#
+position : (static)/relative(주변요소와 상대적거리)/absolute/fixed(스크롤해도 	위치고정)/sticky
+
+# 겹쳤을때 우선순위, 숫자가 클수록 화면 앞으로 표시된다.
+z-index: 1;

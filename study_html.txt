@@ -1,0 +1,116 @@
+HTML 서식
+
+<!DOCTYPE html> #html 문서 선언문   #파일의 확장자는 .html
+<html>
+<!-- Favorite Films Section --> #주석
+
+  <head> #헤드 #메타데이터
+    <title> 웹페이지 타이틀 </title>
+    <style> 내부스타일시트</style>
+  </head>
+
+  <body> #본문
+
+  <a href="./연관문서.html">텍스트</a>
+
+  <h1>큰제목</h1>
+  <nav></nav> #목차, 탐색링크용 태그
+  <ul> #목차 
+    <li><a href="#introduction">Introduction</a></li> #문서내 해당 위치로 이동하기 #id 를 '#'으로 불러옴
+    <li><a href="#habitat">Habitat</a></li>
+    <li><a href="#media">Media</a></li>
+  </ul>
+
+  <h2>중제목</h2>
+  <h3>소제목</h3>
+  <div id="아이디">구분</div>
+  <span>출력물 구분</span>
+  <p>평문</p>
+<p style='color: red; font-size: 20px;'>I'm learning to code!</p> #스타일 넣는 방법. ; 주의
+  <em>이탈릭(기울림)</em>
+  <strong>bold(굵은)</strong>
+  <br> #한줄띄기
+  <hr> #수평선
+
+  <ul> #unordered list tag 
+    <li>● 곰</li>
+    <li>● 호랑이</li>
+  </ul>
+  <ol> #Ordered lists 
+    <li>1. 첫번쨰</li>
+    <li>2. 두번째</li>
+  </ol>
+
+  <a href="이미지 클릭시 이동할 링크" target="_blank">
+    <img src="image-location.jpg" alt="이미지 설명"/>
+  </a>
+
+  <video src="myVideo.mp4" width="320" height="240" controls>
+    Video not supported
+  </video>
+
+<audio autoplay controls> #자동플레이, 컨트롤 패널
+  <source src="iAmAnAudioFile.mp3" type="audio/mp3">
+</audio>
+
+  <a href="https://" target="_blank">link</a> #target : 링크를 어떻게 띄울 것인지 #_blank : 새창(새탭)에 띄우기
+  
+  <table border="1">
+    <thead> #열 이름
+    </thead>
+    <tbody>
+      <tr> #행
+        <th scope="col">col</th> #table heading element
+        <td colspan="2">열</td> #열 2칸(가로) 확장
+        <td rowspan="3">열</td> #행 3칸(세로) 확장
+      </tr>
+      <tr>
+        <th scope="row">row</th>
+      </tr>
+    <tbody>
+    <tfoot> #합계 등 맨 마지막행
+      <td>Total</td>
+      <td>28</td>
+    </tfoot>
+  </table >
+    
+  </body>
+
+  <form> #데이터 입력 후 전달하는 폼
+    <label for="input 의 id">TEXT</label>
+    <input type="text" name="username" id="username" value="기본값" minlength="1" maxlength="250" pattern="[0-9]{14,16}" required > 
+	#required : 필수 입력 항목일 경우    #min, maxlength : 입력할 최소, 최대 글자수              
+    	#pattern : 정규표현식 [0-9] 숫자만, {14,16}: 최소14글자, 최대16글자,  [a-zA-Z0-9]+ : 숫자와 문자만
+
+    <label for="user-password">Password: </label>
+    <input type="password" id="user-password" name="user-password">
+    <input id="volume" name="volume" type="range" min="0" max="100" step="1"> #슬라이드 막대바
+    <input id="amount" name="amount" type="number" step="1"> #숫자입력 #화살표 누르면 1씩증가
+    <input id="tomato" name="tomato" type="checkbox" value="tomato"> #체크박스
+    <input type="radio" name="cheese" id="no" value="no"> #라디오버튼 #value는 다르게, name 은 동일하게 맞춰준다.
+    
+    <select  name="bun" id="bun"> #드롭다운
+        <option value="sesame">Sesame</option>
+        <option value="potato">Potato</option>
+        <option value="onion">Onion</option>
+    </select>
+
+    <input type="text" list="sauces" id="sauce" name="sauce">  #list => datalist 의 id
+        <datalist id="sauces">  #드롭다운이랑 비슷한데, 검색해서 찾을 수 있음
+            <option value="ketchup"></option>
+            <option value="mayo"></option>
+            <option value="gochujang"></option>
+        </datalist>
+    <textarea id="extra" name="extra" rows="3" cols="40"> #좀더 큰 텍스트 입력창
+     디폴트TEXT
+    </textarea>
+    
+    <input type="submit" value="Submit"> # 전송 버튼
+  </form> 
+
+ <main></main>
+<section></section> 
+<article>본문 내용</article> <aside>부수적인글</aside> <figure>사진 등 참고자료<figcaption>설명글</figcaption></figure>
+ <footer></footer> #바닥글 
+
+</html>
